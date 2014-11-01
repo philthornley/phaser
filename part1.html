@@ -170,7 +170,7 @@ function update() {
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown && player.body.onFloor())
     {
-        player.body.velocity.y = -250;
+        player.body.velocity.y = -300;
     }
 
  
@@ -189,12 +189,9 @@ function collectStar (player, star) {
 }
 
 function render() {
-
     // game.debug.body(p);
-    game.debug.bodyInfo(p, 32, 320);
-
+    game.debug.bodyInfo(player, 32, 120);
 }
-
 
 </script>
 
