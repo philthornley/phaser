@@ -8,7 +8,8 @@
 	<script type="text/javascript" src="js/phaser.js"></script>
 	
 		<script type="text/javascript" src="js/Boot.js"></script>
-		<script type="text/javascript" src="js/Preload.js"></script>
+		<script type="text/javascript" src="js/Preloader.js"></script>
+		<script type="text/javascript" src="js/MainMenu.js"></script>
 		<script type="text/javascript" src="js/Game.js"></script>
 	
 	
@@ -19,8 +20,25 @@
     </style>
 </head>
 <body>
-		<!-- include the main game file -->
-		<script src="js/main.js"></script>
+
+		<!-- Empty DIV to hold the game -->
+		<div id="game"></div>
+		
+		<script>
+				
+				(function() {
+						var game = new Phaser.Game(800, 480, Phaser.CANVAS, 'game');
+						game.state.add('Boot', GameStateHolder.Boot);
+						game.state.add('Preloader', GameStateHolder.Preloader);
+						game.state.add('MainMenu', GameStateHolder.MainMenu);
+						game.state.add('Game', GameStateHolder.Game);
+						game.state.add('EndScreen', GameStateHolder.EndScreen);
+						//Start the Boot State
+						game.state.start('Boot');
+					})();
+		</script>
+
+				
 
 </body>
 </html>
