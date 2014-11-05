@@ -1,5 +1,5 @@
 // Declare the object that will hold all game states
-var GameStateHolder = {}; 
+GameStateHolder = {}; 
 
 
 //Declare the Boot state
